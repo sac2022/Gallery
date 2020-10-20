@@ -22,8 +22,8 @@
         <img src="{{ obj.image.url}}" alt="image" class="img-thumbnail">
         {% endif %}
         <form action="." method="GET" enctype="multipart/form-data">
-        <label for="dropdown">
-                <select name="dropdown">
+        <label for="category">
+                <select name="category">
                 {% for cat in cat_list %}
                     <option value="{{ cat }}">{{ cat }}</option>
 
