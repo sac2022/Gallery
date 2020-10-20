@@ -1,7 +1,7 @@
 # Gallery
 `Introduction`
 
-  *A Web App uses Creates an Image Gallery and Filters image by the category*
+  *An Image Gallery App which Creates an Image Gallery and Filters all the images according to the category of images and sorted by date*
   
   `Commands`
   
