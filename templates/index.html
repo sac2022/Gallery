@@ -22,16 +22,15 @@
         {% endif %}
         <form action="." method="GET" enctype="multipart/form-data">
         <label for="category">
-                <select name="category">
-                <option value="NONE">Select Category</option>
+                <select name="category" onChange="document.getElementById('SelectedValue').innerHTML = this.value;">
+                <option value="all" id="SelectedValue">Select Category</option>
                 {% for cat in cat_list %}
                     <option value="{{ cat }}">{{ cat }}</option>
-
-                    {% endfor %}
+                {% endfor %}
                  </select>
-                <button type="submit" >Submit</button>
+                <button type="submit"  >Submit</button>
 
-         <button type="submit" value="Filter" >clear Filter</button>
+         <button type="submit" value="Filter"  id="SubmittedValue">clear Filter</button>
 
             </label>
         {% for image in img%}

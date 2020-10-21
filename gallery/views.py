@@ -22,11 +22,11 @@ def index(request):
         if i is not cat_list:
             cat_list.append(i.category)
             # print(cat_list)
-    cat_list=set(cat_list)
+    cat_list = set(cat_list)
     print(request.GET.get('Filter'))
     if request.GET.get('category') is None:
         return render(request, "index.html", {"all_img": all_img, "form": form, "cat_list": cat_list})
-    elif request.GET.get('Filter') is None:
+    elif request.GET.get('Filter') is None or request.GET.get('all'):
         return render(request, "index.html", {"img": img, "form": form, "cat_list": cat_list})
     else:
-        return redirect(request, "index.html", {"all_img": all_img, "form": form, "cat_list": cat_list})
+        return render(request, "index.html", {"all_img": all_img, "form": form, "cat_list": cat_list})
