@@ -10,7 +10,6 @@
     <div class="container">
 
         <form action="." method="POST"  enctype="multipart/form-data">
-
             {% csrf_token %}
             {{form.as_p}}<button type="submit" class="btn btn-lg btn-success">Upload</button>
         </form>
@@ -24,12 +23,16 @@
         <form action="." method="GET" enctype="multipart/form-data">
         <label for="category">
                 <select name="category">
+                <option value="NONE">Select Category</option>
                 {% for cat in cat_list %}
                     <option value="{{ cat }}">{{ cat }}</option>
 
                     {% endfor %}
                  </select>
                 <button type="submit" >Submit</button>
+
+         <button type="submit" value="Filter" >clear Filter</button>
+
             </label>
         {% for image in img%}
             {% if forloop.first %}<div class="row ">{% endif %}
@@ -46,7 +49,9 @@
 
             {% if forloop.last %}</div>{% endif %}
         {% endfor %}
+
         </form>
+
         {% for x in all_img %}
         {% if forloop.first %}<div class="row ">{% endif %}
             <div class="col-lg-4 col-md-4 col-12" >
